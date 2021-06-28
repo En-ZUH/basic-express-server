@@ -4,7 +4,7 @@
 // const { it } = require('jest-circus');
 const validator = require('../src/middleware/validator');
 
-xdescribe('validator', () => {
+describe('validator', () => {
     it(' returning query name', () => {
         let request = {
             query: {

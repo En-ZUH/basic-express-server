@@ -6,7 +6,7 @@ const supertest = require('supertest');
 const mockRequest = supertest(server.app);
 
 
-xdescribe('API Server', () => {
+describe('API Server', () => {
 
 
     it('404 bad route', async () => {
