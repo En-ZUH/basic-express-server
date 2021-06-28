@@ -18,11 +18,11 @@ const { request, response } = require('express');
 
 
 app.get('/', (req, res) => {
-	res.send('Welcome to my web page - 2');
+	res.send('Welcome to page2- Enas');
 });
 
 
-app.get('/person', validator, (req, res) => {
+app.get('/person', validator, (request, response) => {
 	const result = {
 		name: request.query.name,
 	}
