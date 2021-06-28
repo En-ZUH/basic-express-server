@@ -1,6 +1,6 @@
 'use strict';
 
-const { beforeEach } = require('jest-circus');
+// const { beforeEach } = require('jest-circus');
 const loggerMiddleware = require('../src/middleware/logger');
 
 describe('logger middleware', () => {
@@ -11,19 +11,19 @@ describe('logger middleware', () => {
 
 
     beforeEach(() => {
-        consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+        consoleSpy = jest.spyOn(console, 'log').mockImplementation(); // consoleSpy is the whole obj of console // autocall without print
     })
     afterEach(() => {
-        comsoleSpy.mockRestore();
+        consoleSpy.mockRestore();
     })
 
     it('logs output correctly', () => {
         loggerMiddleware(request, response, next);
-        expect(consolSpy).toHaveBeenCalled();
+        expect(consoleSpy).toHaveBeenCalled();
     })
 
     it('Moving To next Middileware', () => {
         loggerMiddleware(request, response, next);
-        expect(next).toHaveBeenCalled();
+        expect(next).toHaveBeenCalledWith();
     })
 })
